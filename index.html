@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Indian Legal Acts</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Poppins:wght@700&family=Roboto:wght@400&family=Noto+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Add Razorpay Checkout Script -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              'navy': '#0B2545',
+              'gold': '#D4AF37',
+              'light-neutral': '#F7F9FB',
+              'dark-gray': '#233044',
+            },
+            fontFamily: {
+              heading: ['Inter', 'Poppins', 'sans-serif'],
+              body: ['Roboto', 'Noto Sans', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      @keyframes rise {
+        from {
+          transform: translateY(0) translateX(0);
+          opacity: 0;
+        }
+        50% {
+          opacity: 0.9;
+        }
+        to {
+          transform: translateY(-100vh) translateX(var(--drift-x, 0px));
+          opacity: 0;
+        }
+      }
+      .particle {
+        position: absolute;
+        bottom: -20px; /* Start just below the container */
+        border-radius: 50%;
+        animation: rise linear infinite;
+        will-change: transform, opacity;
+        background: rgba(212, 175, 55, 0.5);
+        box-shadow: 0 0 12px 2px rgba(212, 175, 55, 0.6);
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fade-in {
+        animation: fadeIn 0.6s ease-out forwards;
+      }
+      /* News Ticker Styles */
+      @keyframes scroll-left {
+        from { transform: translateX(0); }
+        to { transform: translateX(-50%); }
+      }
+      .ticker-wrap {
+        overflow: hidden;
+        width: 100%;
+        background-color: rgba(11, 37, 69, 0.95); /* navy with more opacity */
+        -webkit-backdrop-filter: blur(8px);
+        backdrop-filter: blur(8px);
+        padding: 1.25rem 0; /* Increased padding for more height */
+        border-top: 1px solid rgba(212, 175, 55, 0.5);
+      }
+      .ticker-track {
+        display: flex;
+        white-space: nowrap;
+        will-change: transform;
+        animation: scroll-left 80s linear infinite;
+      }
+      .ticker-wrap:hover .ticker-track {
+        animation-play-state: paused;
+      }
+      .ticker-item {
+        font-size: 1.1rem; /* Increased font size */
+        font-weight: 500; /* Added font weight for prominence */
+        color: #F7F9FB; /* light-neutral */
+        padding: 0 2.5rem; /* Increased horizontal padding */
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+      .ticker-item:hover {
+        color: #D4AF37; /* gold */
+      }
+      .ticker-item-separator {
+        color: #D4AF37; /* gold */
+        display: flex;
+        align-items: center;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.4",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.25.0",
+    "@supabase/supabase-js": "https://aistudiocdn.com/@supabase/supabase-js@^2.44.4"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-light-neutral dark:bg-dark-gray text-dark-gray dark:text-light-neutral font-body">
+    <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

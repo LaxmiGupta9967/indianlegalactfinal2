@@ -1,0 +1,10 @@
+{
+  "name": "Indian Legal Acts",
+  "description": "A legal research portal providing searchable access to Indian model acts like BNS, BNSS, and BSA. It helps users find sections, case law, and generate AI-powered reports.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
